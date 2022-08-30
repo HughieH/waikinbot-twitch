@@ -4,7 +4,7 @@ import datetime
 import time
 import expectedValueWN8
 import Color_icon_class
-import SessionStats_DB_class
+#import SessionStats_DB_class
 import Tomato_info_class
 
 class SessionStatsTracker:
@@ -13,7 +13,7 @@ class SessionStatsTracker:
         
         # load all_tank_data.json file, this is a dictionary of all tank information (e.g. tank name, tier, etc. ), key is based on Tank ID
         self.allTankopediaData = (json.load(open("all_tank_data.json")))["data"]
-        self.sessionDB = SessionStats_DB_class.SessionStatsDB()
+        #self.sessionDB = SessionStats_DB_class.SessionStatsDB()
         # instance variables assigned to self variables
         self.server = server
         self.user_name = user_name
@@ -115,7 +115,7 @@ class SessionStatsTracker:
         tuple = self.sessionDB.bestBattle()
         return f"Best battle of the day was in the {tuple[0]} -> with {tuple[1]} damage and {tuple[2]} wn8 waikinGasm Battle took place at {tuple[3]}."
     """
-    
+
     # prototype version of session tracking using while loop and keyboard interrupt to end event loop
     def startSessionTracking(self):
 
