@@ -38,14 +38,15 @@ class waikinBot(commands.Bot):
         self.eventMessage = message.content
         await self.handle_commands(message)
         
-    # basic hello command
+    """
     @commands.command(name="bestgame")
     async def bestGame(self, ctx: commands.Context):
         try:
             await ctx.send(self.session.bestGameOnCurrentDate())
         except AttributeError:
             await ctx.send("Session has not started yet!")
-
+    """
+    
     @commands.command(name="hello")
     async def hello(self, ctx: commands.Context):
         await ctx.send(f'Hello {ctx.author.name}!')
