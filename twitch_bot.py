@@ -1,4 +1,3 @@
-
 import os
 import twitchio
 from twitchio.ext import commands
@@ -6,8 +5,6 @@ from twitchio.ext import routines
 import SessionStats_class
 import Player_class
 import datetime
-
-load_dotenv() # load enviroment variables
 
 class waikinBot(commands.Bot):
 
