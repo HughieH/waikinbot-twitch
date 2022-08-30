@@ -1,4 +1,4 @@
-from dotenv import load_dotenv
+
 import os
 import twitchio
 from twitchio.ext import commands
