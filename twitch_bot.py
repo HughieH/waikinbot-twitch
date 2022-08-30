@@ -34,7 +34,7 @@ class waikinBot(commands.Bot):
     async def event_message(self, message):
         if message.echo:
             return
-        #print(message.content)
+        print(message.content)
         self.eventMessage = message.content
         await self.handle_commands(message)
         
@@ -46,7 +46,7 @@ class waikinBot(commands.Bot):
         except AttributeError:
             await ctx.send("Session has not started yet!")
     """
-    
+
     @commands.command(name="hello")
     async def hello(self, ctx: commands.Context):
         await ctx.send(f'Hello {ctx.author.name}!')

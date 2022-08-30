@@ -18,11 +18,8 @@ class TomatoGGInfo:
         else:
             account_id = requests.get("https://api.worldoftanks." + self.playerServer + "/wot/account/list/?application_id=bd644ca5adf8dc631b1598528a4b7fc1&search=" + self.username)
         
-        print(account_id.status_code)
-        print(account_id.json())
         self.accountID = (account_id.json())["data"][0]["account_id"]
-        print(self.accountID)
-
+ 
         # tomato.gg 
         if self.playerServer == "na":
             self.tomatoInfo = (requests.get(f"https://tomatobackend.herokuapp.com/api/player/com/{str(self.accountID)}")).json() #
@@ -65,11 +62,7 @@ class TomatoGGInfo:
         f"> **30 Day Recents:** {str(self.recent30days['overallWN8'])} wn8 | {self.WR(self.recent30days['wins'], self.recent30days['battles'])} % WR\n"
         f"> **60 Day Recents:** {str(self.recent60days['overallWN8'])} wn8 | {self.WR(self.recent60days['wins'], self.recent60days['battles'])} % WR\n")
 
-qb = TomatoGGInfo("eu", "Quickfingers")
 
-#qbTankStats = qb.recent1000Tanks
-
-#print(qb.recent1000Tanks[33])
 
 
 
