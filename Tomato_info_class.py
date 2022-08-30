@@ -19,6 +19,7 @@ class TomatoGGInfo:
             account_id = requests.get("https://api.worldoftanks." + self.playerServer + "/wot/account/list/?application_id=bd644ca5adf8dc631b1598528a4b7fc1&search=" + self.username)
         
         print(account_id.status_code)
+        print(account_id.json())
         self.accountID = (account_id.json())["data"][0]["account_id"]
         print(self.accountID)
 
