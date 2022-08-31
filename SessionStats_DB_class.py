@@ -1,18 +1,17 @@
 import psycopg2
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import os
 
-
-load_dotenv() # load enviroment variables
+#load_dotenv() # load enviroment variables
 
 class SessionStatsDB:
 
     def __init__(self):
         # connection info
-        self.host ="localhost"
-        self.database ="postgres"
-        self.user = "postgres"
-        self.password = os.getenv("POSTGRESS_PW")
+        self.host = os.getenv("HOST")
+        self.database = os.getenv("DATABASE")
+        self.user = os.getenv("USER")
+        self.password = os.getenv("PASSWORD")
     
     # insert individual battle stats into DB, single execution statement
     def insertBattle(self, battle_time, tank_id, tank_name, damage, wn8, kills, xp, win):
@@ -79,5 +78,4 @@ class SessionStatsDB:
                 print('Database connection for insertBattle closed.')
             return best_game
 
-#test = SessionStatsDB()
-#print(test.bestBattle())
+
