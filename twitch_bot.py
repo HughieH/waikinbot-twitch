@@ -34,7 +34,7 @@ class waikinBot(commands.Bot):
     async def event_message(self, message):
         if message.echo:
             return
-        print(f"{message.author}: {message.content}")
+        print(f"{message.author.name}: {message.content}")
         self.userMessage = message.content
         await self.handle_commands(message)
         
