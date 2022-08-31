@@ -1,13 +1,13 @@
 import psycopg2
 #from dotenv import load_dotenv
 import os
-
 #load_dotenv() # load enviroment variables
 
 class SessionStatsDB:
 
     def __init__(self):
         # connection info
+        # TODO #1 In the future heroku periodically changes DB credentials, find way to go about this
         self.host = os.getenv("HOST")
         self.database = os.getenv("DATABASE")
         self.user = os.getenv("USER")
@@ -56,7 +56,7 @@ class SessionStatsDB:
         """
         try: 
             # connect to the PostgreSQL server
-            print('Connecting to the PostgreSQL database to insert battle.')
+            print('Connecting to the PostgreSQL database to collect best battle.')
             conn = psycopg2.connect(
                 host = self.host,
                 database = self.database,

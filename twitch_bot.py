@@ -14,7 +14,7 @@ class waikinBot(commands.Bot):
         # initial_channels can also be a callable which returns a list of strings...
         super().__init__(token = os.getenv("TWITCH_TOKEN"), prefix='!', initial_channels=['Waikin_'])
         
-        self.eventMessage: str 
+        self.userMessage: str 
         self.overallSession: dict
         self.session: SessionStats_class.SessionStatsTracker
         self.initialPlayer: Player_class.Player # initializing as an instance variable as I want routine to continuosly update it for reference when finding latest battle
@@ -34,8 +34,8 @@ class waikinBot(commands.Bot):
     async def event_message(self, message):
         if message.echo:
             return
-        print(message.content)
-        self.eventMessage = message.content
+        print(f"{message.author}: {message.content}")
+        self.userMessage = message.content
         await self.handle_commands(message)
         
     
