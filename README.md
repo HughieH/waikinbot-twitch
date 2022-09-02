@@ -5,4 +5,4 @@ Player “random battle” data (random battle is a term used in WOT to describe
 
 The twitch bot source code is hosted on the cloud based platform Heroku and deployed through GitHub. All player statistics are stored and managed in a PostgreSQL database hosted by Amazon AWS and connected though heroku data.
 
-![alt text]([https://cdn.discordapp.com/attachments/732549918702436455/1015110242205437972/waikinBot_architecture.png](https://cdn.discordapp.com/attachments/732549918702436455/1015110737875697784/waikinBot_architecture_1.png))
+![alt text](https://cdn.discordapp.com/attachments/732549918702436455/1015110737875697784/waikinBot_architecture_1.png)
