@@ -60,7 +60,7 @@ class waikinBot(commands.Bot):
         tank_id = self.session.diffInBattles(self.initialPlayer, player_now)
             
         if tank_id:                 
-            print(f"NEW battles found at {datetime.datetime.now()}")
+            print(f"NEW battles found at {PST_time.pst_time()}")
             print(f"Tank ID with new battle is {tank_id}")
             inital_tank = self.initialPlayer.individualTank(tank_id)
             tank_now = player_now.individualTank(tank_id)
