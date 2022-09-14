@@ -74,7 +74,7 @@ class waikinBot(commands.Bot):
             await ctx.send(self.session.overallTwitchCompareScore())
 
         else:
-            print(f"No new battles found at {datetime.datetime.now()}\n")
+            print(f"No new battles found at {PST_time.pst_time()}\n")
             # await ctx.send("New game not found COPIUM")            
 
         self.initialPlayer = player_now # update latest player to initial for comparison in the next routine cycle
@@ -91,8 +91,8 @@ class waikinBot(commands.Bot):
     @commands.command(name="start")
     async def startSession(self, ctx: commands.Context):
         
-        print(f"Session stats initialized at {datetime.datetime.now()}\n")
-        await ctx.send(f"Session stats initialized at {datetime.datetime.now()}\n")
+        print(f"Session stats initialized at {PST_time.pst_time()}\n")
+        await ctx.send(f"Session stats initialized at {PST_time.pst_time()}\n")
         
         self.session = SessionStats_class.SessionStatsTracker("na", "waikin_reppinKL")
         self.initialPlayer = Player_class.Player(self.session.server, self.session.user_name)
