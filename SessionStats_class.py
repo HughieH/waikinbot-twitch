@@ -2,6 +2,7 @@ import json
 import Player_class
 import datetime
 import time
+import PST_time
 import expectedValueWN8
 import Color_icon_class
 import SessionStats_DB_class
@@ -87,7 +88,7 @@ class SessionStatsTracker:
         else:
             result = "BATTLE LOST 💀"
         
-        time = datetime.datetime.now()
+        time = PST_time.pst_time()
         
         self.compareToQB(tank_id, diffInStats['damage_dealt'], wn8, diffInStats['frags'])
 
