@@ -58,8 +58,6 @@ class waikinBot(commands.Bot):
         player_now = Player_class.Player(self.session.server, self.session.user_name)
         player_now.fetchStats()
         tank_id = self.session.diffInBattles(self.initialPlayer, player_now)
-        
-        print("This is working")
 
         if tank_id:                 
             print(f"NEW battles found at {PST_time.pst_time()}")

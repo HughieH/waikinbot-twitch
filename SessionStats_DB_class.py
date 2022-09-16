@@ -17,7 +17,7 @@ class SessionStatsDB:
     def insertBattle(self, battle_time, tank_id, tank_name, damage, wn8, kills, xp, win):
 
         query = f"""
-        INSERT INTO session_stats(battle_time, tank_id, tank_name, damage, wn8, kills, xp, win)
+        INSERT INTO session_stats(pst_battle_time, tank_id, tank_name, damage, wn8, kills, xp, win)
         VALUES('{battle_time}', {tank_id}, '{tank_name}', {damage}, {wn8}, {kills}, {xp}, {win})
         RETURNING *;
         """
