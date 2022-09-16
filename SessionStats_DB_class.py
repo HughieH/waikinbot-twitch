@@ -49,7 +49,7 @@ class SessionStatsDB:
     def bestBattle(self):
         
         query = f"""
-        SELECT tank_name, damage, wn8, battle_time, kills, win
+        SELECT tank_name, damage, wn8, pst_battle_time, kills, win
         FROM session_stats
         WHERE battle_date = CURRENT_DATE
         ORDER BY damage DESC;
