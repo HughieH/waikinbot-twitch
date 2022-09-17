@@ -55,6 +55,8 @@ class waikinBot(commands.Bot):
     @routines.routine(seconds = 10.0)
     async def routine(self, ctx: commands.Context):
 
+        print("Routine")
+
         player_now = Player_class.Player(self.session.server, self.session.user_name)
         player_now.fetchStats()
         tank_id = self.session.diffInBattles(self.initialPlayer, player_now)
