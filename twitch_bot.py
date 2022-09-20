@@ -101,6 +101,16 @@ class waikinBot(commands.Bot):
         self.initialPlayer.fetchStats()
         
         self.routine.start(ctx)
+    
+    @commands.command(name="waikinbot")
+    async def waikinBotDesc(self, ctx: commands.Context) -> None:
+
+        await ctx.send("""
+        waikinBot is a twitch session statistics chatbot for World of Tanks. It actively keeps track of singular battle statistics in
+        Twitch chat and compares it to QB's 1000 day stats from Tomato.gg. More detail on my github @ https://github.com/HughieH/waikinbot-twitch.
+        """)
+
+        
 
 bot = waikinBot()
 bot.run()
