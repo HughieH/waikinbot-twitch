@@ -9,6 +9,7 @@ import PST_time
 
 class waikinBot(commands.Bot):
 
+    # TODO #2 Make into python @dataclass maybe
     def __init__(self):
         # Initialise our Bot with our access token, prefix and a list of channels to join on boot...
         # prefix can be a callable, which returns a list of strings or a string...
@@ -82,7 +83,7 @@ class waikinBot(commands.Bot):
         self.initialPlayer = player_now # update latest player to initial for comparison in the next routine cycle
 
     @commands.command(name="stop")
-    async def stopSession(self, ctx: commands.Context):
+    async def stopSession(self, ctx: commands.Context) -> None:
         
         self.routine.stop()
         await ctx.send("Session has been ended!")
@@ -91,7 +92,7 @@ class waikinBot(commands.Bot):
         
     
     @commands.command(name="start")
-    async def startSession(self, ctx: commands.Context):
+    async def startSession(self, ctx: commands.Context) -> None:
         
         print(f"Session stats initialized at {PST_time.pst_time()}\n")
         await ctx.send(f"Session stats initialized at {PST_time.pst_time()}\n")
@@ -107,10 +108,18 @@ class waikinBot(commands.Bot):
 
         await ctx.send("""
         waikinBot is a twitch session statistics chatbot for World of Tanks. It actively keeps track of singular battle statistics in
-        Twitch chat and compares it to QB's 1000 day stats from Tomato.gg. More detail on my github @ https://github.com/HughieH/waikinbot-twitch.
+        Twitch chat and compares it to QB's 1000 day stats from Tomato.gg. More detail on my github @ (https://github.com/HughieH/waikinbot-twitch) Pog
         """)
 
+    @commands.command(name="commands")
+    async def waikinBotDesc(self, ctx: commands.Context) -> None:
         
+        await ctx.send("""
+        List of commands: !hello (Bot says hello to you) || !waikinbot (Overview of bot and link to github) || !start (Start tracking session statistics) ||
+        !stop (Stop tracking session statistics) || !bestgame (Returns a message with the best game in the session)
+        """)
+
+
 
 bot = waikinBot()
 bot.run()
