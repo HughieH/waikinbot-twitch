@@ -115,7 +115,7 @@ class waikinBot(commands.Bot):
     async def waikinBotDesc(self, ctx: commands.Context) -> None:
         
         await ctx.send(f"""
-        @{ctx.author}List of commands: !hello (Bot says hello to you) || !waikinbot (Overview of bot and link to github) || !start (Start tracking session statistics) ||
+        @{ctx.author._display_name.__str__}List of commands: !hello (Bot says hello to you) || !waikinbot (Overview of bot and link to github) || !start (Start tracking session statistics) ||
         !stop (Stop tracking session statistics) || !bestgame (Returns a message with the best game in the session)
         """)
 
