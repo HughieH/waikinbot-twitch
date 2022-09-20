@@ -106,13 +106,13 @@ class waikinBot(commands.Bot):
     @commands.command(name="waikinbot")
     async def waikinBotDesc(self, ctx: commands.Context) -> None:
 
-        await ctx.send("""
-        waikinBot is a twitch session statistics chatbot for World of Tanks. It actively keeps track of singular battle statistics in
+        await ctx.send(f"""
+        @{ctx.author.display_name} waikinBot is a twitch session statistics chatbot for World of Tanks. It actively keeps track of singular battle statistics in
         Twitch chat and compares it to QB's 1000 day stats from Tomato.gg. More detail on my github @ (https://github.com/HughieH/waikinbot-twitch) Pog
         """)
 
     @commands.command(name="commands")
-    async def waikinBotDesc(self, ctx: commands.Context) -> None:
+    async def commands(self, ctx: commands.Context) -> None:
         
         await ctx.send(f"""
         @{ctx.author.display_name} List of commands: !hello (Bot says hello to you) || !waikinbot (Overview of bot and link to github) || !start (Start tracking session statistics) ||
