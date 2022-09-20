@@ -112,7 +112,7 @@ class waikinBot(commands.Bot):
         """)
 
     @commands.command(name="commands")
-    async def commands(self, ctx: commands.Context) -> None:
+    async def listOfCommands(self, ctx: commands.Context) -> None:
         
         await ctx.send(f"""
         @{ctx.author.display_name} List of commands: !hello (Bot says hello to you) || !waikinbot (Overview of bot and link to github) || !start (Start tracking session statistics) ||
