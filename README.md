@@ -1,7 +1,7 @@
 # waikinbot-twitch
 Waikinbot is a twitch statistics chat bot that actively tracks and records player game statistics for the game World of Tanks (WOT). The chatbot itself was built in python and based on the twitchio package, an asynchronous python API wrapper for twitch. 
 
-Want to try it out? Go to [my channel](twitch.tv/waikin_) and type in !hello / !commands in chat!
+Want to try it out? Go to [my twitch channel](twitch.tv/waikin_) and type in !hello / !commands in chat!
 
 Player “random battle” data (random battle is a term used in WOT to describe the primary game mode in which most players play), is collected through the WOT API using python’s request library. This data is then used by the twitch bot to send live game statistics in twitch’s chat UI.
 
