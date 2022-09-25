@@ -40,7 +40,7 @@ class waikinBot(commands.Bot):
         self.userMessage = message.content
         await self.handle_commands(message)
         
-    
+    # TODO #3 Make best game for diff time periods
     @commands.command(name="bestgame")
     async def bestGame(self, ctx: commands.Context):
         try:
