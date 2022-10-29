@@ -119,8 +119,10 @@ class waikinBot(commands.Bot):
         !stop (Stop tracking session statistics) || !bestgame (Returns a message with the best game in the session)
         """)
 
+def main():
+    bot = waikinBot()
+    bot.run()
 
-
-bot = waikinBot()
-bot.run()
+if __name__ == '__main__':
+    main()
 
